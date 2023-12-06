@@ -22,7 +22,8 @@ int	main(int argc, char **argv)
 	(void)argv;
 	while (input != "EXIT")
 	{
-		std::cout << "Please enter an input:" << std::endl;
+		std::cout << "Please enter an Command: ADD / SEARCH / EXIT" << std::endl;
+		std::cout << "> ";
 		getline(cin, input);
 
 		if (input == "ADD")

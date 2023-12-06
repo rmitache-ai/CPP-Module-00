@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ class PhoneBook
 {
 	private:
 		Contact _contacts[8];
-		int		_index;
+		int		_index = 0;
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
