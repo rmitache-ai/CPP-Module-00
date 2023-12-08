@@ -36,25 +36,58 @@ void Contact::setDarkestSecret(std::string input)
 
 std::string Contact::getFirstName(void)
 {
-	return (this->_firstName);
+	return (this->trunc(this->_firstName));
 }
 
 std::string Contact::getLastName(void)
 {
-	return (this->_lastName);
+	return (this->trunc(this->_lastName));
+
 }
 
 std::string Contact::getNickname(void)
 {
-	return (this->_nickName);
+	return (this->trunc(this->_nickName));
 }
 
 std::string Contact::getPhoneNumber(void)
 {
-	return (this->_phoneNumber);
+	return (this->trunc(this->_phoneNumber));
 }
 
 std::string Contact::getDarkestSecret(void)
+{
+	return (this->trunc(this->_darkestSecret));
+}
+
+std::string Contact::trunc(std::string input)
+{
+	if (input.length() >= 10)
+		input = input.substr(0, 9) + ".";
+	return (input);
+}
+
+std::string Contact::getFullFirstName(void)
+{
+	return (this->_firstName);
+}
+
+std::string Contact::getFullLastName(void)
+{
+	return (this->_lastName);
+}
+
+std::string Contact::getFullNickname(void)
+{
+	return (this->_nickName);
+}
+
+std::string Contact::getFullPhoneNumber(void)
+{
+	return (this->_phoneNumber);
+}
+
+std::string Contact::getFullDarkestSecret(void)
 {
 	return (this->_darkestSecret);
 }
