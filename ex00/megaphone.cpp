@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cctype>
+#include <cstring>
 
-using namespace std;
 
 int main(int argc, char **argv)
 {
@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 		{
 			for (int j = 0; j < strlen(argv[i]); j++)
 				std::cout << (char)toupper(argv[i][j]);
-			std::cout << " ";
 		}
 		std::cout << std::endl;
 	}
