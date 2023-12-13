@@ -15,15 +15,16 @@
 
 int	main(int argc, char **argv)
 {
-	PhoneBook	book;
-	string		input;
+	PhoneBook		book;
+	std::string		input;
 
 	(void)argc;
 	(void)argv;
+
 	while (input != "EXIT")
 	{
 		std::cout << "Please enter an input:" << std::endl;
-		getline(cin, input);
+		getline(std::cin, input);
 
 		if (input == "ADD")
 			book.add();

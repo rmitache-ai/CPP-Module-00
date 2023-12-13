@@ -13,25 +13,17 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook(void)
-{
-}
+PhoneBook::PhoneBook(void) {this->_index = 0;}
 
-PhoneBook::~PhoneBook(void)
-{
-	
-}
+PhoneBook::~PhoneBook(void) {}
 
 void PhoneBook::add(void)
 {
 	std::string input;
 
 	input = "";
-	if (this->_index > 3)
-	{
+	if (this->_index > 8)
 		std::cout << "This is your 8th Contact. If you continue, your last will be overwritten!" << std::endl;
-		// this->_index = 0; RESET??
-	}
 	while (!std::cin.eof() && input == "")
 	{
 		std::cout << "Please Enter the First Name: ";
@@ -93,7 +85,9 @@ void	PhoneBook::search(void)
 		std::cout << "Please Enter an index so get a detailed view" << std::endl;
 		if (getline(std::cin, input) && input != "")
 		{
-			if (std::stoi(input) > this->_index)
+			int	n;
+			std::stringstream(input) << n;
+			if (n > this->_index)
 				std::cout << "Index is out of range!" << std::endl;
 			else
 				std::cout << "SHESSH" << std::endl;

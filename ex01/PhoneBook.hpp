@@ -17,8 +17,6 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace std;
-
 #include "Contact.hpp"
 
 class PhoneBook
