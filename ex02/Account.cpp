@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include <time.h>
+#include <ctime>
 #include <iostream>
 
 int Account::_nbAccounts = 0;
@@ -40,7 +40,7 @@ int	Account::getNbWithdrawals()
 }
 
 void Account::displayAccountsInfos()
-{
+}
 	t::_displayTimestamp();
 	std::cout << "Number of Accounts: " << getNbAccounts() << std::endl;
 	std::cout << "Total Amount: " << getTotalAmount() << std::endl;
@@ -56,6 +56,18 @@ void	Account::makeDeposit(int deposit)
 
 void	Account::_displayTimestamp()
 {
-	time_t	currentTime = time(NULL);
-	std::cout << "Current Time: " << ctime(&currentTime);
+	std::time_t	rawtime;
+	std::tm * timeinfo;
+	char buffer[80];
+
+	std::time(&rawtime);
+	timeinfo = std::localtime(&rawtime);
+	// [YEARMONTHDAY_HOURMINSEC]
+	std::strftime(buffer, 80, "%Y-%m%-d", timeinfo);
+	std::puts(buffer);
 }
+
+
+
+
+

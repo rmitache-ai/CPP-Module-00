@@ -16,6 +16,6 @@
 
 int	main(int argc, char **argv)
 {
-	Account::displayAccountsInfos();
+	Account::Account(5);
 	return (0);
 }
