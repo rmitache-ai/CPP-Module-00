@@ -6,7 +6,7 @@
 /*   By: rmitache <rmitache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:32:27 by rmitache          #+#    #+#             */
-/*   Updated: 2023/12/06 22:23:00 by rmitache         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:43:27 by rmitache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,17 @@ void	PhoneBook::search(void)
 
 	input = "";
 	std::cout << std::endl;
-		std::cout	<< std::setw(10) << "Index" << "|"
-					<<	std::setw(10) << "First Name" << "|"
-					<<	std::setw(10) << "Last Name" << "|"
-					<<	std::setw(10) << "Nickname" << std::endl;
-	for (int i = 0; i < this->_index; i++) // index should reset?
+		std::cout	<< std::setw(10)	<<	"Index" << "|"
+					<<	std::setw(10)	<<	"First Name" << "|"
+					<<	std::setw(10)	<<	"Last Name" << "|"
+					<<	std::setw(10)	<<	"Nickname" << std::endl;
+	for (int i = 0; i < this->_index; i++)
 	{
-		std::cout	<< std::setw(10) << this->_index
-					<<	std::setw(10) << this->_contacts[i].getFirstName()
-					<<	std::setw(10) << this->_contacts[i].getLastName()
-					<<	std::setw(10) << this->_contacts->getNickname() << std::endl;
+		std::cout	<<	std::setw(10)	<<	this->_index
+					<<	std::setw(10)	<<	this->_contacts[i].getFirstName()
+					<<	std::setw(10)	<<	this->_contacts[i].getLastName()
+					<<	std::setw(10)	<<	this->_contacts[i].getNickname()
+					<<	std::endl;
 	}
 	input = "";
 	if (!std::cin.eof() && input == "")
@@ -85,12 +86,17 @@ void	PhoneBook::search(void)
 		std::cout << "Please Enter an index so get a detailed view" << std::endl;
 		if (getline(std::cin, input) && input != "")
 		{
-			int	n;
-			std::stringstream(input) << n;
-			if (n > this->_index)
-				std::cout << "Index is out of range!" << std::endl;
-			else
-				std::cout << "SHESSH" << std::endl;
+			int	n = atoi(input.c_str());
+			if (!(n > this->_index) && n)
+			{
+				std::cout	<<	"---------- Contact Number: [" << n << "] ----------" << "\n";
+				std::cout	<<	"First Name: " << _contacts[n].getDetailedFirstName() << "\n";
+				std::cout	<<	"Last Name: " << _contacts[n].getDetailedLastName() << "\n";
+				std::cout	<<	"Nick Name: " << _contacts[n].getDetailedNickname() << "\n";
+				std::cout	<<	"Phone Number: " << _contacts[n].getDetailedPhoneNumber() << "\n";
+				std::cout	<<	"Darkest Secret: " << _contacts[n].getDetailedDarkestSecret() << "\n";
+				std::cout	<<	"\n";
+			}
 		}
 	}
 }

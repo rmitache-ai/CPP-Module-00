@@ -6,7 +6,7 @@
 /*   By: rmitache <rmitache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:27:31 by rmitache          #+#    #+#             */
-/*   Updated: 2023/12/06 21:59:40 by rmitache         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:29:03 by rmitache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ class	Contact
 		std::string	getNickname(void);
 		std::string	getPhoneNumber(void);
 		std::string	getDarkestSecret(void);
+		std::string	getDetailedFirstName(void);
+		std::string	getDetailedLastName(void);
+		std::string	getDetailedNickname(void);
+		std::string	getDetailedPhoneNumber(void);
+		std::string	getDetailedDarkestSecret(void);
 		void		setFirstName(std::string input);
 		void		setLastName(std::string input);
 		void		setNickName(std::string input);
